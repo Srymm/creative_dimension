@@ -1,0 +1,25 @@
+{
+    "type" : "datapack:forecastworld",
+    "generator" : 
+    {
+        "type" : "minecraft:flat",
+        "settings" : 
+        {
+            "layers" : 
+            [
+                {
+                    "block" : "minecraft:air",
+                    "height" : 63
+                },
+                {
+                    "block" : "minecraft:grass_block",
+                    "height" : 1
+                }
+            ],
+            "biome" : "minecraft:plains",
+            "lakes" : false,
+            "features" : false,
+            "structure_overrides" : []
+        }
+    }
+}
