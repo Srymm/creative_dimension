@@ -1,6 +1,7 @@
 {
-    "pack": {
-        "pack_format": 26,
-        "description": "Add a flat creative dimension"
+    "pack" : 
+    {
+        "pack_format" : 26,
+        "description" : "Add a flat creative dimension"
     }
 }

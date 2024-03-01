@@ -1,0 +1,25 @@
+{
+    "type" : "minecraft:overworld",
+    "generator" :
+    {
+        "type" : "minecraft:flat",
+        "settings" :
+        {
+            "layers" :
+            [
+                {
+                    "height" : 63,
+                    "block" : "minecraft:air"
+                },
+                {
+                    "height" : 1,
+                    "block" : "minecraft:grass_block"
+                }
+            ]
+        },
+        "structures" : 
+        {
+            "structures" : []
+        }
+    }
+}
