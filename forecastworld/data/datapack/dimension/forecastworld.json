@@ -1,5 +1,5 @@
 {
-    "type" : "datapack:forecastworld",
+    "type" : "datapack:forecastdimension",
     "generator" : 
     {
         "type" : "minecraft:flat",
@@ -16,7 +16,7 @@
                     "height" : 1
                 }
             ],
-            "biome" : "minecraft:plains",
+            "biome" : "datapack:forecastbiome",
             "lakes" : false,
             "features" : false,
             "structure_overrides" : []
