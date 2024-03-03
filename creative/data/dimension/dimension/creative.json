@@ -1,5 +1,5 @@
 {
-    "type" : "datapack:forecastdimension",
+    "type" : "dimension:creative",
     "generator" : 
     {
         "type" : "minecraft:flat",
@@ -16,7 +16,7 @@
                     "height" : 1
                 }
             ],
-            "biome" : "datapack:forecastbiome",
+            "biome" : "dimension:creative",
             "lakes" : false,
             "features" : false,
             "structure_overrides" : []
