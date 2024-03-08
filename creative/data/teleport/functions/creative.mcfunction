@@ -1,19 +1,14 @@
-# Store the position of the player
+# Print the message
 
-execute store result score @p x run data get entity @p Pos[0]
-execute store result score @p y run data get entity @p Pos[1]
-execute store result score @p z run data get entity @p Pos[2]
-
-forceload add ~ ~
-forceload add ~ 0
-forceload add 0 ~
-
-
-# Teleport the player to the creative dimension
-
-execute in dimension:creative run teleport @p ~ ~ ~
+execute if entity @p[nbt = {Dimension : "dimension:creative"}] run tellraw @p {"text" : "", "extra" : [{"text" : "[teleport:creative] ", "color" : "#AA0000"}, {"text" : "teleportation to dimension:creative failed. "}, {"text" : "You are already in this dimension.", "color" : "#AA0000"}]}
+execute unless entity @p[nbt = {Dimension : "dimension:creative"}] run tellraw @p {"text" : "", "extra" : [{"text" : "[teleport:creative] ", "color" : "#00AA00"}, {"text" : "teleportation to dimension:creative succeeded."}]}
 
 
 # Set the gamemode of the player to creative
 
-gamemode creative @p
+execute unless entity @p[nbt = {Dimension : "dimension:creative"}] run gamemode creative @p
+
+
+# dimension the player to the creative dimension on the creative point
+
+execute unless entity @p[nbt = {Dimension : "dimension:creative"}] in dimension:creative run teleport @p @e[type = minecraft:armor_stand, tag = creative_point, limit = 1]
