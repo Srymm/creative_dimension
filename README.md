@@ -39,6 +39,7 @@ This function set the **nearest player** to **creative gamemode** and **teleport
 
 # Structure of the datapack
 
+```mermaid
 graph LR
 A[creative_dimension]-->B[pack.mcmeta]
 A-->C[pack.png]
@@ -62,3 +63,4 @@ R-->T[set_overworld_point.mcfunction]
 R-->U[set_creative_point.mcfunction]
 R-->V[overworld.mcfunction]
 R-->W[creative.mcfunction]
+```
