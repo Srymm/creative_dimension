@@ -41,26 +41,19 @@ This function set the **nearest player** to **creative gamemode** and **teleport
 
 ```mermaid
 graph LR
-A[creative_dimension]-->B[pack.mcmeta]
-A-->C[pack.png]
-A-->D[data]
-D-->E[minecraft]
-E-->F[tags]
-F-->G[functions]
-G-->H[load.json]
-A-->I[dimension]
-I-->J[dimension]
-J-->K[creative.json]
-I-->L[dimension_type]
-L-->M[creative.json]
-I-->N[worldgen]
-N-->O[biome]
-O-->P[creative.json]
-D-->Q[teleport]
-Q-->R[functions]
-R-->S[load.mcfunction]
-R-->T[set_overworld_point.mcfunction]
-R-->U[set_creative_point.mcfunction]
-R-->V[overworld.mcfunction]
-R-->W[creative.mcfunction]
+PACK[(creative_dimension)]
+PACK-->DATA(data)
+       DATA-->MINECRAFT((minecraft))-->A(tags)-->B(functions)-->C[load.json]
+       DATA-->DIMENSION((dimension))
+              DIMENSION-->D(dimension)-->E[creative.json]
+              DIMENSION-->F(dimension_type)-->G[creative.json]
+              DIMENSION-->H(worldgen)-->I(biome)-->J[creative.json]
+       DATA-->TELEPORT((teleport))-->FUNCTIONS(functions)
+                                     FUNCTIONS-->K[load.mcfunction]
+                                     FUNCTIONS-->L[set_overworld_point.mcfunction]
+                                     FUNCTIONS-->M[set_creative_point.mcfunction]
+                                     FUNCTIONS-->N[overworld.mcfunction]
+                                     FUNCTIONS-->O[creative.mcfunction]
+PACK-->P[pack.mcmeta]
+PACK-->Q[pack.png]
 ```
