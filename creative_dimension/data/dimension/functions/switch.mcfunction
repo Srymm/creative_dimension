@@ -1,13 +1,19 @@
+# Initialize the player if he is not already
+
+scoreboard players add @s dimension_identifier 0
+execute as @s[scores = {dimension_identifier = 0}] run function dimension:initialize_player
+
+
 # Store player state
 
 summon minecraft:marker 0 0 0 {Tags:["dimension_store"]}
-function dimension:core/store
+function dimension:store
 
 
 # Restore last player state
 
 tag @s add dimension_target
-execute as @e[type = minecraft:marker, tag = dimension_restore] run function dimension:core/restore
+execute as @e[type = minecraft:marker, tag = dimension_restore] run function dimension:restore
 tag @s remove dimension_target
 
 

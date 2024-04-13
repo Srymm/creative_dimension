@@ -10,6 +10,11 @@ execute in dimension:creative run summon minecraft:marker 0 0 0 {Tags:["dimensio
 execute in dimension:creative run scoreboard players operation @e[type = minecraft:marker, tag = dimension_store, limit = 1] dimension_identifier = @s dimension_identifier
 
 
+# Set empty inventory
+
+execute in dimension:creative run data modify entity @e[type = minecraft:marker, tag = dimension_store, limit = 1] data.Inventory set value {}
+
+
 # Set gamemode to creative
 
 execute in dimension:creative run data modify entity @e[type = minecraft:marker, tag = dimension_store, limit = 1] data.playerGameType set value 1
@@ -17,9 +22,9 @@ execute in dimension:creative run data modify entity @e[type = minecraft:marker,
 
 # Set position to 0 0 0
 
-execute in dimension:creative run data modify entity @e[type = minecraft:marker, tag = dimension_store, limit = 1] data.Pos_0 set value 0
-execute in dimension:creative run data modify entity @e[type = minecraft:marker, tag = dimension_store, limit = 1] data.Pos_1 set value 0
-execute in dimension:creative run data modify entity @e[type = minecraft:marker, tag = dimension_store, limit = 1] data.Pos_2 set value 0
+execute in dimension:creative run data modify entity @e[type = minecraft:marker, tag = dimension_store, limit = 1] data.Pos[0] set value 0d
+execute in dimension:creative run data modify entity @e[type = minecraft:marker, tag = dimension_store, limit = 1] data.Pos[1] set value 0d
+execute in dimension:creative run data modify entity @e[type = minecraft:marker, tag = dimension_store, limit = 1] data.Pos[2] set value 0d
 
 
 # Prepare for first switch
