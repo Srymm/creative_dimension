@@ -1,5 +1,5 @@
 {
-    "type" : "dimension:creative",
+    "type" : "creative_dimension:creative",
     "generator" : 
     {
         "type" : "minecraft:flat",
@@ -16,7 +16,7 @@
                     "height" : 1
                 }
             ],
-            "biome" : "dimension:creative",
+            "biome" : "creative_dimension:creative",
             "lakes" : false,
             "features" : false,
             "structure_overrides" : []
