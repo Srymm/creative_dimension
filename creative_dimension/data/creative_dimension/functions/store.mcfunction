@@ -8,6 +8,11 @@ scoreboard players operation @e[type = minecraft:marker, tag = cd_store, limit =
 data modify entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.Inventory set from entity @s Inventory
 
 
+# Store enderchest
+
+data modify entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.EnderItems set from entity @s EnderItems
+
+
 # Store gamemode
 
 data modify entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.playerGameType set from entity @s playerGameType
