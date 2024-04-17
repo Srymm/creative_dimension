@@ -25,6 +25,18 @@ execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier
 execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run execute if score @s cd_variable matches 3 run gamemode spectator @a[tag = cd_target, limit = 1]
 
 
+# Store experience
+
+execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run execute store result score #cd_experience_levels cd_variable run data get entity @s data.XpLevel
+execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run execute store result score #cd_experience_points cd_variable run data get entity @s data.XpP
+execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run scoreboard players operation #cd_experiences cd_variable = #cd_experience_levels cd_variable
+execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run scoreboard players operation #cd_experiences cd_variable += #cd_experience_points cd_variable
+
+execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run xp set @a[tag = cd_target, limit = 1] 0 levels
+execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run xp set @a[tag = cd_target, limit = 1] 0 points
+execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run execute as @a[tag = cd_target, limit = 1] if score #cd_experiences cd_variable matches 1.. run function creative_dimension:restore_experience
+
+
 # Restore position
 
 execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run data modify entity @s Pos[0] set from entity @s data.Pos[0]
