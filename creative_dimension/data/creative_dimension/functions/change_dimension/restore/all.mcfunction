@@ -3,15 +3,15 @@
 execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run execute store result score #cd_items cd_variable run data get entity @s data.Inventory
 
 execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run clear @a[tag = cd_target, limit = 1]
-execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run execute if score #cd_items cd_variable matches 1.. run function creative_dimension:restore_inventory
+execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run execute if score #cd_items cd_variable matches 1.. run function creative_dimension:change_dimension/restore/inventory
 
 
 # Restore enderchest
 
 execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run execute store result score #cd_items cd_variable run data get entity @s data.EnderItems
 
-execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run execute as @a[tag = cd_target, limit = 1] run function creative_dimension:clear_enderchest
-execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run execute if score #cd_items cd_variable matches 1.. run function creative_dimension:restore_enderchest
+execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run execute as @a[tag = cd_target, limit = 1] run function creative_dimension:change_dimension/restore/clear_enderchest
+execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run execute if score #cd_items cd_variable matches 1.. run function creative_dimension:change_dimension/restore/enderchest
 execute if score @s cd_identifier = @a[tag = cd_target, limit = 1] cd_identifier run data modify entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] HandItems[0] set value {}
 
 
