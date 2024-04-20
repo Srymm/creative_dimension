@@ -14,6 +14,7 @@ data modify entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.E
 
 
 # Store experience
+
 data modify entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.XpLevel set from entity @s XpLevel
 execute store result entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.XpP int 1 run xp query @s points
 
