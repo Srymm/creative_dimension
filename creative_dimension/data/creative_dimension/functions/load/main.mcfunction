@@ -7,7 +7,8 @@ execute in creative_dimension:creative run forceload add 0 0
 
 
 # Summon an unique armor stand
-execute in creative_dimension:creative run kill @e[type = minecraft:marker, tag = cd_restore_inventory]
+
+execute in creative_dimension:creative run kill @e[type = minecraft:armor_stand, tag = cd_restore_inventory]
 execute in creative_dimension:creative run summon minecraft:armor_stand 0 0 0 {Tags : ["cd_restore_inventory"], NoGravity : 1, Invulnerable : 1, Invisible : 1}
 
 
