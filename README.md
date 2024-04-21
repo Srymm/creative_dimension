@@ -44,18 +44,36 @@ This function sets the **nearest player** to **creative gamemode** and **telepor
 ```mermaid
 graph LR
 PACK[(creative_dimension)]
-PACK-->DATA(data)
-       DATA-->MINECRAFT((minecraft))-->A(tags)-->B(functions)-->C[load.json]
-       DATA-->DIMENSION((dimension))
-              DIMENSION-->D(dimension)-->E[creative.json]
-              DIMENSION-->F(dimension_type)-->G[creative.json]
-              DIMENSION-->H(worldgen)-->I(biome)-->J[creative.json]
-       DATA-->TELEPORT((teleport))-->FUNCTIONS(functions)
-                                     FUNCTIONS-->K[load.mcfunction]
-                                     FUNCTIONS-->L[set_overworld_point.mcfunction]
-                                     FUNCTIONS-->M[set_creative_point.mcfunction]
-                                     FUNCTIONS-->N[overworld.mcfunction]
-                                     FUNCTIONS-->O[creative.mcfunction]
-PACK-->P[pack.mcmeta]
-PACK-->Q[pack.png]
+PACK --> DATA(data)
+         DATA --> CD((cd)) --> INTERFACE(functions)
+                               INTERFACE --> A[change_dimension.mcfunction]
+                               INTERFACE --> B[help.mcfunction]
+                               INTERFACE --> C[load.mcfunction]
+                               INTERFACE --> D[unload.mcfunction]
+         DATA --> CREATIVE_DIMENSION((creative_dimension))
+                  CREATIVE_DIMENSION --> DIMENSION(dimension) --> E[creative.json]
+                  CREATIVE_DIMENSION --> DIMENSION_TYPE(dimension_type) --> F[creative.json]
+                  CREATIVE_DIMENSION --> FUNCTIONS(functions)
+                                         FUNCTIONS --> CHANGE_DIMENSION(change_dimension)
+                                                       CHANGE_DIMENSION --> RESTORE(restore)
+                                                                            RESTORE --> H[all.mcfunction]
+                                                                            RESTORE --> I[clear_enderchest.mcfunction]
+                                                                            RESTORE --> J[enderchest.mcfunction]
+                                                                            RESTORE --> K[experience_levels.mcfunction]
+                                                                            RESTORE --> L[experience_points.mcfunction]
+                                                                            RESTORE --> M[inventory.mcfunction]
+                                                       CHANGE_DIMENSION --> STORE(store)
+                                                                            STORE --> N[all.mcfunction]
+                                                                            STORE --> O[initialize.mcfunction]
+                                                       CHANGE_DIMENSION --> P[main]
+                                         FUNCTIONS --> HELP(help) --> Q[main.mcfunction]
+                                         FUNCTIONS --> LOAD(load) --> R[main.mcfunction]
+                                         FUNCTIONS --> UNLOAD(unload) --> S[main.mcfunction]
+                                         FUNCTIONS --> T[tick.mcfunction]
+                  CREATIVE_DIMENSION --> WORLDGEN(worldgen) --> BIOME(biome) --> G[creative.json]
+         DATA --> MINECRAFT((minecraft)) --> TAGS(tags) --> AUTOMATICALLY(functions)
+                                                            AUTOMATICALLY --> U[load.json]
+                                                            AUTOMATICALLY --> V[tick.json]
+PACK-->W[pack.mcmeta]
+PACK-->X[pack.png]
 ```
