@@ -1,12 +1,45 @@
 # Creative Dimension
-**Creative Dimension** is a **Minecraft datapack** that add a **flat creative dimension** to your world.
+**Creative Dimension** is a **Minecraft datapack** that add an **independant flat creative dimension** to your world.
 
 This dimension is only composed of **one layer** of grass block at coordinate **Y = 0**. 
 There is no **structures**, no **monsters**, no **rains**, no **day-night cycle** and a **constant ambient light**.
 
 
-## In game commands
-### `/function teleport:load`
+# In game commands
+
+## Non-operator command
+### `/trigger cd`
+
+## Operator commands
+
+All commands that must be used as an operator are only commands under the `cd` domain name.
+
+```mermaid
+graph LR
+DATA(...)
+DATA --> CD((cd)) --> INTERFACE(functions)
+                      INTERFACE --> A[change_dimension.mcfunction]
+                      INTERFACE --> B[help.mcfunction]
+                      INTERFACE --> C[load.mcfunction]
+                      INTERFACE --> D[unload.mcfunction]
+```
+
+### `/function cd:change_dimension`
+
+Please read the `/trigger cd` command [description](#trigger-cd).
+
+### `/function cd:help`
+
+### `/function cd:load`
+
+### `/function cd:unload`
+
+
+
+
+
+
+# BEFORE
 
 This function **loads the datapack** and is **called automatically** by the game when the datapack is added.
 
