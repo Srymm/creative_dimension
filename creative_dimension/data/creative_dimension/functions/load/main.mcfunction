@@ -8,25 +8,23 @@ execute in creative_dimension:creative run forceload add 0 0
 
 # Summon an unique armor stand
 
-execute in creative_dimension:creative run kill @e[type = minecraft:armor_stand, tag = cd_restore_inventory]
-execute in creative_dimension:creative run summon minecraft:armor_stand 0 0 0 {Tags : ["cd_restore_inventory"], NoGravity : 1, Invulnerable : 1, Invisible : 1}
+execute in creative_dimension:creative run kill @e[type = minecraft:armor_stand, tag = cd_restore]
+execute in creative_dimension:creative run summon minecraft:armor_stand 0 0 0 {Tags : ["cd_restore"], NoGravity : 1, Invulnerable : 1, Invisible : 1}
 
 
 # Creating scoreboard variables
 
 scoreboard objectives add cd trigger
-
-scoreboard objectives add cd_identifier dummy
-scoreboard objectives add cd_variable dummy
+scoreboard objectives add cd_objective dummy
 
 
 # Player identification system
 
-scoreboard players set #cd_constant cd_variable 1
-scoreboard players add #cd_identifier_index cd_identifier 0
-execute if score #cd_identifier_index cd_identifier < #cd_constant cd_variable run scoreboard players set #cd_identifier_index cd_identifier 1
+scoreboard players set #cd_constant cd_objective 1
+scoreboard players add #cd_identifier_index cd_objective 0
+execute if score #cd_identifier_index cd_objective < #cd_constant cd_objective run scoreboard players set #cd_identifier_index cd_objective 1
 
 
 # mutual exclusion system
 
-scoreboard players add #cd_mutual_exclusion cd_variable 0
+scoreboard players add #cd_mutual_exclusion cd_objective 0
