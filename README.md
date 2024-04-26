@@ -1,4 +1,6 @@
-![Creative Dimension](./creative_dimension/pack.png)
+<div align = "center">
+  <img src = "./creative_dimension/pack.png" width = "200" height = "200"/>
+</div>
 
 **Creative Dimension** is a **Minecraft datapack** that add an **independant flat creative dimension** to your world.
 
