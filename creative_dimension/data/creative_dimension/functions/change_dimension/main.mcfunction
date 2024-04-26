@@ -1,12 +1,12 @@
-scoreboard players set #cd_mutual_exclusion cd_variable 1
+scoreboard players set #cd_mutual_exclusion cd_objective 1
 
 ## Begin of critical section
 
 
 # Initialize the player if he is not already
 
-scoreboard players add @s cd_identifier 0
-execute if score @s cd_identifier matches 0 run function creative_dimension:change_dimension/store/initialize
+scoreboard players add @s cd_objective 0
+execute if score @s cd_objective matches 0 run function creative_dimension:change_dimension/store/initialize
 
 
 # Store player state
@@ -30,4 +30,4 @@ tag @e[type = minecraft:marker, tag = cd_store] remove cd_store
 
 ## End of critical section
 
-scoreboard players set #cd_mutual_exclusion cd_variable 0
+scoreboard players set #cd_mutual_exclusion cd_objective 0

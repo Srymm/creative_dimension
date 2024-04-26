@@ -1,6 +1,6 @@
 # Link the player to the marker
 
-scoreboard players operation @e[type = minecraft:marker, tag = cd_store, limit = 1] cd_identifier = @s cd_identifier
+scoreboard players operation @e[type = minecraft:marker, tag = cd_store, limit = 1] cd_objective = @s cd_objective
 
 
 # Store inventory

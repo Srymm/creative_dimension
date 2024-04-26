@@ -1,13 +1,13 @@
 # Create an unique identifier
 
-scoreboard players operation @s cd_identifier = #cd_identifier_index cd_identifier
-scoreboard players add #cd_identifier_index cd_identifier 1
+scoreboard players operation @s cd_objective = #cd_identifier_index cd_objective
+scoreboard players add #cd_identifier_index cd_objective 1
 
 
 # Create a linked marker to the player in cd:creative
 
 execute in creative_dimension:creative run summon minecraft:marker 0 0 0 {Tags:["cd_store"]}
-execute in creative_dimension:creative run scoreboard players operation @e[type = minecraft:marker, tag = cd_store, limit = 1] cd_identifier = @s cd_identifier
+execute in creative_dimension:creative run scoreboard players operation @e[type = minecraft:marker, tag = cd_store, limit = 1] cd_objective = @s cd_objective
 
 
 # Set empty inventory
