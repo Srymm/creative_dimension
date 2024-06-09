@@ -50,7 +50,7 @@ This function **loads the datapack** and is **called automatically** by the game
 
 When the data pack is loaded, the **chunk positioned at 0 0** is set to **always be loaded** in **each dimension**, an **armor stand** is summoned in the creative dimension and **two scoreboard objectives** are added.
 
-> [!warning]
+> [!IMPORTANT]
 > Please note that if you have other datapacks that **include dimensions**, it is important to **load the chunk at 0 0** (by using the command `/forceload add 0 0`) in those dimensions for the datapack to **work**.
 
 
