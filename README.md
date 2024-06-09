@@ -40,6 +40,7 @@ After that, the player **retrieves the information from his previous marker** an
 
 Players who call this function **for the first time** will be given a previous marker in the **creative dimension** with **empty** inventories, with **creative** gamemode, and with **no experience**.
 
+> [!warning]
 > Please note that this function may **not work properly** if a player manages to **switch between the creative and other dimensions without using this datapack function**.
 
 
@@ -49,6 +50,7 @@ This function **loads the datapack** and is **called automatically** by the game
 
 When the data pack is loaded, the **chunk positioned at 0 0** is set to **always be loaded** in **each dimension**, an **armor stand** is summoned in the creative dimension and **two scoreboard objectives** are added.
 
+> [!warning]
 > Please note that if you have other datapacks that **include dimensions**, it is important to **load the chunk at 0 0** (by using the command `/forceload add 0 0`) in those dimensions for the datapack to **work**.
 
 
