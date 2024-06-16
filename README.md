@@ -187,7 +187,7 @@ PACK --- Y[pack.png]
         <td>1.21</td>
         <td>48</td>
         <td>2.0</td>
-        <td>Creative Dimension 2.0.48</td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.0.48">Creative Dimension 2.0.48</a></td>
       </tr>
       <tr>
         <td>
@@ -214,5 +214,3 @@ PACK --- Y[pack.png]
     </tbody>
   </table>
 </div>
-
-
