@@ -91,31 +91,31 @@ When the data pack is unloaded, all chunks loaded, all entities summoned, all sc
 graph LR
 PACK[(creative_dimension)]
 PACK --- DATA(data)
-         DATA --- CD((cd)) --- INTERFACE(functions)
+         DATA --- CD((cd)) --- INTERFACE(function)
                                INTERFACE --- A[change_dimension.mcfunction]
                                INTERFACE --- C[load.mcfunction]
                                INTERFACE --- D[unload.mcfunction]
          DATA --- CREATIVE_DIMENSION((creative_dimension))
                   CREATIVE_DIMENSION --- DIMENSION(dimension) --- E[creative.json]
                   CREATIVE_DIMENSION --- DIMENSION_TYPE(dimension_type) --- F[creative.json]
-                  CREATIVE_DIMENSION --- FUNCTIONS(functions)
-                                         FUNCTIONS --- CHANGE_DIMENSION(change_dimension)
-                                                       CHANGE_DIMENSION --- RESTORE(restore)
-                                                                            RESTORE --- H[all.mcfunction]
-                                                                            RESTORE --- I[clear_enderchest.mcfunction]
-                                                                            RESTORE --- J[enderchest.mcfunction]
-                                                                            RESTORE --- K[experience_levels.mcfunction]
-                                                                            RESTORE --- L[experience_points.mcfunction]
-                                                                            RESTORE --- M[inventory.mcfunction]
-                                                       CHANGE_DIMENSION --- STORE(store)
-                                                                            STORE --- N[all.mcfunction]
-                                                                            STORE --- O[initialize.mcfunction]
-                                                       CHANGE_DIMENSION --- P[main.mcfunction]
-                                         FUNCTIONS --- LOAD(load) --- R[main.mcfunction]
-                                         FUNCTIONS --- UNLOAD(unload) --- S[main.mcfunction]
-                                         FUNCTIONS --- T[tick.mcfunction]
+                  CREATIVE_DIMENSION --- FUNCTION(function)
+                                         FUNCTION --- CHANGE_DIMENSION(change_dimension)
+                                                      CHANGE_DIMENSION --- RESTORE(restore)
+                                                                           RESTORE --- H[all.mcfunction]
+                                                                           RESTORE --- I[clear_enderchest.mcfunction]
+                                                                           RESTORE --- J[enderchest.mcfunction]
+                                                                           RESTORE --- K[experience_levels.mcfunction]
+                                                                           RESTORE --- L[experience_points.mcfunction]
+                                                                           RESTORE --- M[inventory.mcfunction]
+                                                      CHANGE_DIMENSION --- STORE(store)
+                                                                           STORE --- N[all.mcfunction]
+                                                                           STORE --- O[initialize.mcfunction]
+                                                      CHANGE_DIMENSION --- P[main.mcfunction]
+                                         FUNCTION --- LOAD(load) --- R[main.mcfunction]
+                                         FUNCTION --- UNLOAD(unload) --- S[main.mcfunction]
+                                         FUNCTION --- T[tick.mcfunction]
                   CREATIVE_DIMENSION --- WORLDGEN(worldgen) --- BIOME(biome) --- U[creative.json]
-         DATA --- MINECRAFT((minecraft)) --- TAGS(tags) --- AUTOMATICALLY(functions)
+         DATA --- MINECRAFT((minecraft)) --- TAGS(tags) --- AUTOMATICALLY(function)
                                                             AUTOMATICALLY --- V[load.json]
                                                             AUTOMATICALLY --- W[tick.json]
 PACK --- X[pack.mcmeta]
@@ -150,7 +150,7 @@ PACK --- Y[pack.png]
         </td>
         <td>🔴</td>
         <td>🟢</td>
-        <td>26, 41</td>
+        <td>26, 41, 48</td>
       </tr>
       <tr>
         <td>1.0</td>
@@ -184,13 +184,19 @@ PACK --- Y[pack.png]
     </thead>
     <tbody>
       <tr>
+        <td>1.21</td>
+        <td>48</td>
+        <td>2.0</td>
+        <td>Creative Dimension 2.0.48</td>
+      </tr>
+      <tr>
         <td>
           1.20.6<br />
           1.20.5
         </td>
         <td>41</td>
         <td>2.0</td>
-        <td>Creative Dimension 2.0.41</td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.0.41">Creative Dimension 2.0.41</a></td>
       </tr>
       <tr>
         <td rowspan = 2>
