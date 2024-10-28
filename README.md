@@ -150,7 +150,7 @@ PACK --- Y[pack.png]
         </td>
         <td>🔴</td>
         <td>🟢</td>
-        <td>26, 41, 48</td>
+        <td>26, 41, 48, 57</td>
       </tr>
       <tr>
         <td>1.0</td>
@@ -183,6 +183,15 @@ PACK --- Y[pack.png]
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td>
+          1.21.3<br />
+          1.21.2
+        </td>
+        <td>57</td>
+        <td>2.0</td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.0.57">Creative Dimension 2.0.57</a></td>
+      </tr>
       <tr>
         <td>
           1.21.1<br />
