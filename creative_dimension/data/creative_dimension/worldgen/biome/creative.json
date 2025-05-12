@@ -13,6 +13,6 @@
     "creature_spawn_probability" : 0,
     "spawners" : {},
     "spawn_costs" : {},
-    "carvers" : {},
+    "carvers" : [],
     "features" : []
 }
