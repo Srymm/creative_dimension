@@ -1,5 +1,5 @@
 execute store result score #cd_slot cd_objective run data get entity @s data.EnderItems[0].Slot
-data modify entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] HandItems[0] set from entity @s data.EnderItems[0]
+data modify entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] equipment.mainhand set from entity @s data.EnderItems[0]
 
 
 # Restore the item in the good slot

@@ -1,10 +1,8 @@
 execute store result score #cd_slot cd_objective run data get entity @s data.Inventory[0].Slot
-data modify entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] HandItems[0] set from entity @s data.Inventory[0]
+data modify entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] equipment.mainhand set from entity @s data.Inventory[0]
 
 
 # Restore the item in the good slot
-
-execute if score #cd_slot cd_objective matches -106 run item replace entity @a[tag = cd_target, limit = 1] weapon.offhand from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] weapon.mainhand
 
 execute if score #cd_slot cd_objective matches 0 run item replace entity @a[tag = cd_target, limit = 1] hotbar.0 from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] weapon.mainhand
 execute if score #cd_slot cd_objective matches 1 run item replace entity @a[tag = cd_target, limit = 1] hotbar.1 from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] weapon.mainhand
@@ -43,11 +41,6 @@ execute if score #cd_slot cd_objective matches 32 run item replace entity @a[tag
 execute if score #cd_slot cd_objective matches 33 run item replace entity @a[tag = cd_target, limit = 1] inventory.24 from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] weapon.mainhand
 execute if score #cd_slot cd_objective matches 34 run item replace entity @a[tag = cd_target, limit = 1] inventory.25 from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] weapon.mainhand
 execute if score #cd_slot cd_objective matches 35 run item replace entity @a[tag = cd_target, limit = 1] inventory.26 from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] weapon.mainhand
-
-execute if score #cd_slot cd_objective matches 100 run item replace entity @a[tag = cd_target, limit = 1] armor.feet from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] weapon.mainhand
-execute if score #cd_slot cd_objective matches 101 run item replace entity @a[tag = cd_target, limit = 1] armor.legs from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] weapon.mainhand
-execute if score #cd_slot cd_objective matches 102 run item replace entity @a[tag = cd_target, limit = 1] armor.chest from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] weapon.mainhand
-execute if score #cd_slot cd_objective matches 103 run item replace entity @a[tag = cd_target, limit = 1] armor.head from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] weapon.mainhand
 
 
 # Prepare for next item to restore
