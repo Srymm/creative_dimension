@@ -1,8 +1,18 @@
 # Restore inventory
 
+execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run data modify entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] equipment.head set from entity @s data.equipment.head
+execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run data modify entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] equipment.chest set from entity @s data.equipment.chest
+execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run data modify entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] equipment.legs set from entity @s data.equipment.legs
+execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run data modify entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] equipment.feet set from entity @s data.equipment.feet
+execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run data modify entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] equipment.offhand set from entity @s data.equipment.offhand
 execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run execute store result score #cd_items cd_objective run data get entity @s data.Inventory
 
 execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run clear @a[tag = cd_target, limit = 1]
+execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run item replace entity @a[tag = cd_target, limit = 1] armor.head from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] armor.head
+execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run item replace entity @a[tag = cd_target, limit = 1] armor.chest from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] armor.chest
+execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run item replace entity @a[tag = cd_target, limit = 1] armor.legs from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] armor.legs
+execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run item replace entity @a[tag = cd_target, limit = 1] armor.feet from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] armor.feet
+execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run item replace entity @a[tag = cd_target, limit = 1] weapon.offhand from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] weapon.offhand
 execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run execute if score #cd_items cd_objective matches 1.. run function creative_dimension:change_dimension/restore/inventory
 
 
@@ -12,7 +22,6 @@ execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective r
 
 execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run execute as @a[tag = cd_target, limit = 1] run function creative_dimension:change_dimension/restore/clear_enderchest
 execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run execute if score #cd_items cd_objective matches 1.. run function creative_dimension:change_dimension/restore/enderchest
-execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run data modify entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] HandItems[0] set value {}
 
 
 # Restore gamemode
@@ -48,4 +57,5 @@ execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective r
 
 # End of restore
 
+execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run data modify entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] equipment set value {}
 execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run kill @s

@@ -5,6 +5,7 @@ scoreboard players operation @e[type = minecraft:marker, tag = cd_store, limit =
 
 # Store inventory
 
+data modify entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.equipment set from entity @s equipment
 data modify entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.Inventory set from entity @s Inventory
 
 

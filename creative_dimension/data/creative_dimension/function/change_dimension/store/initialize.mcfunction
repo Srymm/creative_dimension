@@ -12,6 +12,7 @@ execute in creative_dimension:creative run scoreboard players operation @e[type 
 
 # Set empty inventory
 
+execute in creative_dimension:creative run data modify entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.equipment set value {}
 execute in creative_dimension:creative run data modify entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.Inventory set value {}
 
 
