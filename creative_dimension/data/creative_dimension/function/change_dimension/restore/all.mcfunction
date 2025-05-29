@@ -48,11 +48,11 @@ execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective r
 
 # Restore position
 
-execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run data modify entity @s Pos[0] set from entity @s data.Pos[0]
-execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run data modify entity @s Pos[1] set from entity @s data.Pos[1]
-execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run data modify entity @s Pos[2] set from entity @s data.Pos[2]
+execute if score #cd_resynchronize cd_objective matches 0 run execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run data modify entity @s Pos[0] set from entity @s data.Pos[0]
+execute if score #cd_resynchronize cd_objective matches 0 run execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run data modify entity @s Pos[1] set from entity @s data.Pos[1]
+execute if score #cd_resynchronize cd_objective matches 0 run execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run data modify entity @s Pos[2] set from entity @s data.Pos[2]
 
-execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run teleport @a[tag = cd_target, limit = 1] @s
+execute if score #cd_resynchronize cd_objective matches 0 run execute if score @s cd_objective = @a[tag = cd_target, limit = 1] cd_objective run teleport @a[tag = cd_target, limit = 1] @s
 
 
 # End of restore
