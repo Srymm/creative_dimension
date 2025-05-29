@@ -31,38 +31,38 @@ In this dimension, each player has an **inventory**, an **enderchest inventory**
 ## Non-operator command
 ### `/trigger cd`
 
-This command allows **every player** to **switch** between the **creative** and the **other dimensions**.
+This command allows **any player** to **switch** between the **creative and other dimensions**.
 
-The purpose of this command is only to call the *cd:change_dimension* function as a **non-operator** player. If you need **more information**, please refer to the [description](#function-cdchange_dimension) of the *cd:change_dimension* function.
-
-<br />
+Its sole purpose is to **provide access** to the cd:change_dimension function for **non-operator players**.
+For more information, refer to the [description](#function-cdchange_dimension) of the *cd:change_dimension* function.
 
 ## Operator commands
 
-> [!note]
-> Please note that all functions that **should be used** by an operator are under the *cd* namespace.
+> [!important]
+> Please only use functions from the `cd` namespace. These are the functions **intended to be used by operators**.
+> All functions in the `creative_dimension` namespace are internal and **must not be called directly**.
 
 ```mermaid
 graph LR
 CD((cd)) --- INTERFACE(functions)
              INTERFACE --- A[change_dimension.mcfunction]
-             INTERFACE --- C[load.mcfunction]
+             INTERFACE --- B[load.mcfunction]
+             INTERFACE --- C[set_default_position.mcfunction]
              INTERFACE --- D[unload.mcfunction]
 ```
+
 
 <br />
 
 ### `/function cd:change_dimension`
 
-This command allows **every player** to **switch** between the **creative** and the **other dimensions**.
+This command allows **any player** to **switch** between the **creative and other dimensions**.
 
-When this function is called **by a player**, a **marker is summoned** in his dimension at the chunk 0 0. The marker **contains information** about player inventory, enderchest inventory, gamemode, experience, and position.
-After that, the player **retrieves the information from his previous marker** and is therefore teleported to the other dimension, recovering his inventory, enderchest inventory, experience and gamemode.
+When the function is called **by a player**, a **marker is summoned** in their current dimension at the chunk (0, 0). This marker **stores information** about the **player's main inventory, ender chest inventory, game mode, experience, and position**. Then, the player **retrieves data from their previous marker** and is therefore **teleported to the other dimension**.
 
-Players who call this function **for the first time** will be given a previous marker in the **creative dimension** with **empty** inventories, with **creative** gamemode, and with **no experience**.
+If players switch dimensions **without using this function**, they will be resynchronized by retrieving data from their previous marker information, **without being teleported**. However, because no marker is created in their current dimension during the transition, the **next time** they switch dimensions **using the datapack**, the teleportation will use a **default position** instead of a saved location. For more information about how default positions work, refer to the [description](#function-cdset_default_position) of the cd:set_default_position function.
 
-> [!warning]
-> Please note that this function may **not work properly** if a player manages to **switch between the creative and other dimensions without using this datapack function**.
+**New players** are assigned a default marker in the **creative dimension when they first join**, with **empty** inventories, **creative** gamemode, and **no experience** at their first connection.
 
 <br />
 
@@ -70,18 +70,35 @@ Players who call this function **for the first time** will be given a previous m
 
 This function **loads the datapack** and is **called automatically** by the game when the datapack is added or when the command `/reload` is used.
 
-When the data pack is loaded, the **chunk positioned at 0 0** is set to **always be loaded** in **each dimension**, an **armor stand** is summoned in the creative dimension and **two scoreboard objectives** are added.
+When the data pack is loaded, the **chunk at (0, 0)** is set to **always be loaded** in **each dimension**, an **armor stand** is summoned in the creative dimension and **two scoreboard objectives** are added.
 
 > [!IMPORTANT]
-> Please note that if you have other datapacks that **include dimensions**, it is important to **load the chunk at 0 0** in those dimensions (by using the command `/forceload add 0 0`) for the datapack to **work**.
+> If you are using other datapacks that define **additional dimensions**, make sure to **force-load the chunk at (0, 0) in each of those dimensions** manually using `/execute in <dimension> run forceload add 0 0`.
+> This is required for the datapack to function properly.
+
+<br />
+
+### `/function cd:set_default_position`
+
+This function updates the **default teleportation position** based on the player's **current location and dimension**.
+
+There are two default positions used by the datapack :
+- The **creative default position**, initially set to coordinates (0, 0, 0)
+- The **overworld  default position**, automatically initialized at the position of the first player processed by the datapack
+
+These positions are useful when a player switches dimensions **outside the datapack system**, as the default position will be used for teleportation during their **next switch**.
 
 <br />
 
 ### `/function cd:unload`
 
-This function **unloads the datapack** and should be called **before uninstalling** the datapack.
+This function **unloads the datapack** and should be called **before uninstalling** it.
 
-When the data pack is unloaded, all chunks loaded, all entities summoned, all scoreboard objectives added **by this datapack** are **removed**.
+When the datapack is unloaded, all **chunks loaded, entities summoned, and scoreboard objectives created by the datapack** are permanently removed.
+
+> [!WARNING]
+> This action is **irreversible**. All saved player states (inventory, experience, etc.) will be deleted.
+> **To avoid data loss**, make sure that **no players are currently in the creative dimension** before running this command.
 
 <br />
 
@@ -93,7 +110,8 @@ PACK[(creative_dimension)]
 PACK --- DATA(data)
          DATA --- CD((cd)) --- INTERFACE(function)
                                INTERFACE --- A[change_dimension.mcfunction]
-                               INTERFACE --- C[load.mcfunction]
+                               INTERFACE --- B[load.mcfunction]
+                               INTERFACE --- C[set_default_position.mcfunction]
                                INTERFACE --- D[unload.mcfunction]
          DATA --- CREATIVE_DIMENSION((creative_dimension))
                   CREATIVE_DIMENSION --- DIMENSION(dimension) --- E[creative.json]
@@ -109,17 +127,19 @@ PACK --- DATA(data)
                                                                            RESTORE --- M[inventory.mcfunction]
                                                       CHANGE_DIMENSION --- STORE(store)
                                                                            STORE --- N[all.mcfunction]
-                                                                           STORE --- O[initialize.mcfunction]
+                                                      CHANGE_DIMENSION --- O[initialize.mcfunction]
                                                       CHANGE_DIMENSION --- P[main.mcfunction]
+                                                      CHANGE_DIMENSION --- Q[resynchronize.mcfunction]
                                          FUNCTION --- LOAD(load) --- R[main.mcfunction]
-                                         FUNCTION --- UNLOAD(unload) --- S[main.mcfunction]
-                                         FUNCTION --- T[tick.mcfunction]
-                  CREATIVE_DIMENSION --- WORLDGEN(worldgen) --- BIOME(biome) --- U[creative.json]
+                                         FUNCTION --- SET_DEFAULT_POSITION(set_default_position) --- S[main.mcfunction]
+                                         FUNCTION --- UNLOAD(unload) --- T[main.mcfunction]
+                                         FUNCTION --- U[tick.mcfunction]
+                  CREATIVE_DIMENSION --- WORLDGEN(worldgen) --- BIOME(biome) --- V[creative.json]
          DATA --- MINECRAFT((minecraft)) --- TAGS(tags) --- AUTOMATICALLY(function)
-                                                            AUTOMATICALLY --- V[load.json]
-                                                            AUTOMATICALLY --- W[tick.json]
-PACK --- X[pack.mcmeta]
-PACK --- Y[pack.png]
+                                                            AUTOMATICALLY --- W[load.json]
+                                                            AUTOMATICALLY --- X[tick.json]
+PACK --- Y[pack.mcmeta]
+PACK --- Z[pack.png]
 ```
 
 # Summary of versions and releases
@@ -139,6 +159,18 @@ PACK --- Y[pack.png]
     </thead>
     <tbody>
       <tr>
+        <td>2.1</td>
+        <td align = left>
+          <ul>
+              <li><strong>Added</strong> resynchronization system to the <code>change_dimension</code> function.</li>
+              <li><strong>Added</strong> <code>set_default_position</code> function.</li>
+          </ul>
+        </td>
+        <td>🟢</td>
+        <td>🟢</td>
+        <td>71</td>
+      </tr>
+      <tr>
         <td>2.0</td>
         <td align = left>
           <ul>
@@ -149,7 +181,7 @@ PACK --- Y[pack.png]
           </ul>
         </td>
         <td>🔴</td>
-        <td>🟢</td>
+        <td>🟡</td>
         <td>26, 41, 48, 57, 61, 71</td>
       </tr>
       <tr>
@@ -184,10 +216,14 @@ PACK --- Y[pack.png]
     </thead>
     <tbody>
       <tr>
-        <td>
+        <td rowspan = 2>
           1.21.5
         </td>
-        <td>71</td>
+        <td rowspan = 2>71</td>
+        <td>2.1</td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.1.71">Creative Dimension 2.1.71</a></td>
+      </tr>
+      <tr>
         <td>2.0</td>
         <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.0.71">Creative Dimension 2.0.71</a></td>
       </tr>
