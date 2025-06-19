@@ -168,7 +168,7 @@ PACK --- Z[pack.png]
         </td>
         <td>🟢</td>
         <td>🟢</td>
-        <td>71</td>
+        <td>71, 80</td>
       </tr>
       <tr>
         <td>2.0</td>
@@ -215,6 +215,14 @@ PACK --- Z[pack.png]
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td>
+          1.21.6
+        </td>
+        <td>80</td>
+        <td>2.1</td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.1.80">Creative Dimension 2.1.80</a></td>
+      </tr>
       <tr>
         <td rowspan = 2>
           1.21.5
