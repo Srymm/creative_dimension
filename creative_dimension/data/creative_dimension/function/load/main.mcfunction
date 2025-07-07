@@ -8,8 +8,7 @@ execute in creative_dimension:creative run forceload add 0 0
 
 # Summon an unique armor stand
 
-execute in creative_dimension:creative run kill @e[type = minecraft:armor_stand, tag = cd_restore]
-execute in creative_dimension:creative run summon minecraft:armor_stand 0 0 0 {Tags : ["cd_restore"], NoGravity : 1, Invulnerable : 1, Invisible : 1}
+execute unless entity @e[type = minecraft:armor_stand, tag = cd_restore] run execute in creative_dimension:creative run summon minecraft:armor_stand 0 0 0 {Tags : ["cd_restore"], NoGravity : 1, Invulnerable : 1, Invisible : 1}
 
 data modify entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] data.DefaultCreativePosition[0] set value 0d
 data modify entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] data.DefaultCreativePosition[1] set value 0d
