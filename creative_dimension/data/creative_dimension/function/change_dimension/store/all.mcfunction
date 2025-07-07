@@ -27,4 +27,6 @@ data modify entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.p
 
 # Store position
 
-data modify entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.Pos set from entity @s Pos
+execute if score #cd_resynchronize cd_objective matches 0 run data modify entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.Pos set from entity @s Pos
+execute if score #cd_resynchronize cd_objective matches 1 run data modify entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.Pos set from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] data.DefaultOverworldPosition
+execute if score #cd_resynchronize cd_objective matches 2 run data modify entity @e[type = minecraft:marker, tag = cd_store, limit = 1] data.Pos set from entity @e[type = minecraft:armor_stand, tag = cd_restore, limit = 1] data.DefaultCreativePosition

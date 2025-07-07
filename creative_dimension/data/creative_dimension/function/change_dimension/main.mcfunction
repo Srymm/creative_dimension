@@ -3,15 +3,21 @@ scoreboard players set #cd_mutual_exclusion cd_objective 1
 ## Begin of critical section
 
 
-# Initialize the player if he is not already
+# Change dimension tags
 
-scoreboard players add @s cd_objective 0
-execute if score @s cd_objective matches 0 run function creative_dimension:change_dimension/store/initialize
+tag @s remove cd_creative_dimension
+tag @s remove cd_default_dimension
+
+execute unless dimension creative_dimension:creative run tag @s add cd_creative_dimension 
+execute if dimension creative_dimension:creative run tag @s add cd_default_dimension
 
 
 # Store player state
 
-summon minecraft:marker 0 0 0 {Tags:["cd_store"]}
+execute if score #cd_resynchronize cd_objective matches 0 run summon minecraft:marker 0 0 0 {Tags:["cd_store"]}
+execute if score #cd_resynchronize cd_objective matches 1 run execute in minecraft:overworld run summon minecraft:marker 0 0 0 {Tags:["cd_store"]}
+execute if score #cd_resynchronize cd_objective matches 2 run execute in creative_dimension:creative run summon minecraft:marker 0 0 0 {Tags:["cd_store"]}
+
 function creative_dimension:change_dimension/store/all
 
 

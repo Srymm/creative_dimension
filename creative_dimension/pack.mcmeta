@@ -1,7 +1,8 @@
 {
     "pack" : 
     {
-        "pack_format" : 71,
-        "description" : "Add an independant flat creative dimension"
+        "description" : "Add an independant flat creative dimension",
+        "pack_format" : 81,
+        "supported_formats": [71, 81]
     }
 }
