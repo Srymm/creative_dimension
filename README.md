@@ -1,5 +1,5 @@
 > [!NOTE]
-> This repo was recently cleaned up and reorganized. It's primarily a personal project, so it may not be actively maintained going forward. I have some improvement ideas in mind, but I'm playing Minecraft less these days and I'm thinking about moving on to Hytale.
+> This repository was recently cleaned up and reorganized. It's a personal project that may not be actively maintained going forward. Some improvements are still planned, but my time playing Minecraft has decreased, and I may eventually move on to Hytale.
 
 <div align = "center">
   <img src = "./creative_dimension/pack.png" width = "200" height = "200"/>
@@ -33,7 +33,7 @@ This dimension consists of a single grass layer at Y = 0 and remains **entirely 
 
 **This command allows any player to switch between the Creative dimension and the regular world.**
 
-It simply provides access to the cd:change_dimension function for non-operator players.
+It simply provides access to the *cd:change_dimension* function for non-operator players.
 For more details about dimension switching, refer to the [description](#function-cdchange_dimension) of the *cd:change_dimension* function.
 
 
