@@ -1,3 +1,6 @@
+> [!NOTE]
+> This repo was recently cleaned up and reorganized. It's primarily a personal project, so it may not be actively maintained going forward. I have some improvement ideas in mind, but I'm playing Minecraft less these days and I'm thinking about moving on to Hytale.
+
 <div align = "center">
   <img src = "./creative_dimension/pack.png" width = "200" height = "200"/>
 </div>
