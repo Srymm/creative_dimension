@@ -1,0 +1,1 @@
+$tellraw @s ["", { text: "[Creative Dimension] ", color: "gray", click_event: { action: "open_url", url: "https://github.com/Srymm/creative_dimension/tree/master" }, hover_event: { action: "show_text", value: [{ text: "Open GitHub", italic: true }] } }, $(message)]

@@ -1,0 +1,11 @@
+{
+  "criteria": 
+  {
+    "initialize_player": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "rewards": {
+    "function": "creative_dimension:initialize_player"
+  }
+}

@@ -1,1 +1,1 @@
-function creative_dimension:load/main
+function creative_dimension:load

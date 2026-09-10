@@ -1,0 +1,1 @@
+$item replace entity @s $(section).$(slot) from entity @e[type = minecraft:armor_stand, tag = creative_dimension.restore, limit = 1] weapon.mainhand
