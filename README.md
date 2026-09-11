@@ -15,6 +15,7 @@
   - [**Version status**](#version-status)
   - [**Release list**](#release-list)
 
+
 <br />
 
 # Description
@@ -130,7 +131,7 @@ It removes all stored information and deactivates the entire environment created
         </td>
         <td>🔴</td>
         <td>🟢</td>
-        <td>81</td>
+        <td>71, 80, 81</td>
       </tr>
       <tr>
         <td>2.1</td>
@@ -212,31 +213,39 @@ It removes all stored information and deactivates the entire environment created
         </td>
         <td rowspan = 2>81</td>
         <td>3.0</td>
-        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/3.0.81">Creative Dimension 3.0.81</a></td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v3.0.81">Creative Dimension 3.0.81</a></td>
       </tr>
       <tr>
         <td>2.1</td>
-        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.1.81">Creative Dimension 2.1.81</a></td>
-      </tr>
-      <tr>
-        <td>
-          1.21.6
-        </td>
-        <td>80</td>
-        <td>2.1</td>
-        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.1.80">Creative Dimension 2.1.80</a></td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v2.1.81">Creative Dimension 2.1.81</a></td>
       </tr>
       <tr>
         <td rowspan = 2>
+          1.21.6
+        </td>
+        <td rowspan = 2>80</td>
+        <td>3.0</td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v3.0.80">Creative Dimension 3.0.80</a></td>
+      </tr>
+      <tr>
+        <td>2.1</td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v2.1.80">Creative Dimension 2.1.80</a></td>
+      </tr>
+      <tr>
+        <td rowspan = 3>
           1.21.5
         </td>
-        <td rowspan = 2>71</td>
+        <td rowspan = 3>71</td>
+        <td>3.0</td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v3.0.71">Creative Dimension 3.0.71</a></td>
+      </tr>
+      <tr>
         <td>2.1</td>
-        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.1.71">Creative Dimension 2.1.71</a></td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v2.1.71">Creative Dimension 2.1.71</a></td>
       </tr>
       <tr>
         <td>2.0</td>
-        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.0.71">Creative Dimension 2.0.71</a></td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v2.0.71">Creative Dimension 2.0.71</a></td>
       </tr>
       <tr>
         <td>
@@ -244,7 +253,7 @@ It removes all stored information and deactivates the entire environment created
         </td>
         <td>61</td>
         <td>2.0</td>
-        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.0.61">Creative Dimension 2.0.61</a></td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v2.0.61">Creative Dimension 2.0.61</a></td>
       </tr>
       <tr>
         <td>
@@ -253,7 +262,7 @@ It removes all stored information and deactivates the entire environment created
         </td>
         <td>57</td>
         <td>2.0</td>
-        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.0.57">Creative Dimension 2.0.57</a></td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v2.0.57">Creative Dimension 2.0.57</a></td>
       </tr>
       <tr>
         <td>
@@ -262,7 +271,7 @@ It removes all stored information and deactivates the entire environment created
         </td>
         <td>48</td>
         <td>2.0</td>
-        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.0.48">Creative Dimension 2.0.48</a></td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v2.0.48">Creative Dimension 2.0.48</a></td>
       </tr>
       <tr>
         <td>
@@ -271,7 +280,7 @@ It removes all stored information and deactivates the entire environment created
         </td>
         <td>41</td>
         <td>2.0</td>
-        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.0.41">Creative Dimension 2.0.41</a></td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v2.0.41">Creative Dimension 2.0.41</a></td>
       </tr>
       <tr>
         <td rowspan = 2>
@@ -280,11 +289,11 @@ It removes all stored information and deactivates the entire environment created
         </td>
         <td rowspan = 2>26</td>
         <td>2.0</td>
-        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/2.0.26">Creative Dimension 2.0.26</a></td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v2.0.26">Creative Dimension 2.0.26</a></td>
       </tr>
       <tr>
         <td>1.0</td>
-        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/1.0.26">Creative Dimension 1.0.26</a></td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v1.0.26">Creative Dimension 1.0.26</a></td>
       </tr>
     </tbody>
   </table>
