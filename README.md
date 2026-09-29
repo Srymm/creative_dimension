@@ -131,7 +131,7 @@ It removes all stored information and deactivates the entire environment created
         </td>
         <td>🔴</td>
         <td>🟢</td>
-        <td>71, 80, 81</td>
+        <td>71, 80, 81, 88.0</td>
       </tr>
       <tr>
         <td>2.1</td>
@@ -206,7 +206,16 @@ It removes all stored information and deactivates the entire environment created
       </tr>
     </thead>
     <tbody>
-    <tr>
+      <tr>
+        <td>
+          1.21.10<br />
+          1.21.9
+        </td>
+        <td>88.0</td>
+        <td>23.0</td>
+        <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v3.0.88.0">Creative Dimension 3.0.88.0</a></td>
+      </tr>
+      <tr>
         <td rowspan = 2>
           1.21.8<br />
           1.21.7
