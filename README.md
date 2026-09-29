@@ -212,7 +212,7 @@ It removes all stored information and deactivates the entire environment created
           1.21.9
         </td>
         <td>88.0</td>
-        <td>23.0</td>
+        <td>3.0</td>
         <td><a href = "https://github.com/Srymm/creative_dimension/releases/tag/v3.0.88.0">Creative Dimension 3.0.88.0</a></td>
       </tr>
       <tr>
